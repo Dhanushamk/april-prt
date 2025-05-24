@@ -9,7 +9,7 @@ pipeline {
         stage('git') {
             steps {
                 script {
-                    git 'https://github.com/Dhanushamk/april-prt.git'
+                    git url:'https://github.com/Dhanushamk/april-prt.git' branch:'main'
                 }
             }
         }
