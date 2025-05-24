@@ -9,10 +9,9 @@ pipeline {
         stage('git') {
             steps {
                 script {
-                    git url:'https://github.com/Dhanushamk/april-prt.git', branch:'main'
+                     git url:'https://github.com/Dhanushamk/april-prt.git', branch:'main'
                 }
             }
-        }
         stage('docker') {
             steps {
                 script {
@@ -21,7 +20,6 @@ pipeline {
                     sh 'sudo docker push dhanushamk/april-prt'
                 }
             }
-        }
         stage('K8s') {
             steps {
                 script {
@@ -32,4 +30,4 @@ pipeline {
             }
         }
     }
-}
+
