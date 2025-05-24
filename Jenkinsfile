@@ -3,7 +3,7 @@ pipeline {
         label 'KM'
     }
     environment {
-        DOCKERHUB_CREDENTIALS = credentials("dhanushamk)
+        DOCKERHUB_CREDENTIALS = credentials("dhanushamk")
     }
     stages {
         stage('git') {
