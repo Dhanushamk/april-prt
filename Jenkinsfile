@@ -10,12 +10,14 @@ pipeline {
             steps {
                      git url:'https://github.com/Dhanushamk/april-prt.git', branch:'main'
             }
+        }
         stage('docker') {
             steps {
                     sh 'sudo docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}'
                     sh 'sudo docker build /home/ubuntu/jenkins/workspace/job1/ -t dhanushamk/april-prt'                    
                     sh 'sudo docker push dhanushamk/april-prt'
             }
+         }
         stage('K8s') {
             steps {
                     sh 'kubectl apply -f deploy.yaml'
@@ -25,3 +27,4 @@ pipeline {
             }
         }
     }
+
